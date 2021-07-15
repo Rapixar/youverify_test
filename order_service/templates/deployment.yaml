@@ -2,15 +2,15 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: payment_service
+    app: order_service
     tag: v1.0.0
-  name: payment-service
+  name: order-service
   namespace: {{ .Values.namespace.name }} 
 spec:
   replicas: {{ .Values.replicaCount }} 
   selector:
     matchLabels:
-      app: payment_service
+      app: order_service
       tag: v1.0.0
   strategy:
     rollingUpdate:
@@ -20,12 +20,12 @@ spec:
   template:
     metadata:
       labels:
-        app: payment_service
+        app: order_service
         tag: v1.0.0
     spec:
       containers:
       - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
-        name: payment_service
+        name: order_service
         resources:
 {{ toYaml .Values.resources | indent 12 }}

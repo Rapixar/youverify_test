@@ -1,12 +1,12 @@
 namespace:
-  name: staging 
+  name: prod 
  
 service:
   port: 80
   type: ClusterIP
 
 image:
-  repository: cudraphael/payment-service:latest 
+  repository: cudraphael/product-service:latest 
   tag: 1.0.0
   pullPolicy: IfNotPresent
 
@@ -15,7 +15,7 @@ health:
   livenessDelay: 180
   endpoint: /health
 
-replicaCount: 1
+replicaCount: 2
 
 resources:
   requests:
@@ -30,7 +30,7 @@ ingress:
   path: /
   hosts:
     - url: localhost:8080
-      path: /payment
+      path: /product
 
   tls: []
 
