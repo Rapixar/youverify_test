@@ -1,0 +1,9 @@
+apiVersion: v1
+name: customer_service-deployment
+description: Install customer service
+keywords:
+- customer 
+version: 1.0.0
+maintainers:
+- name: craphael 
+  email: cudraphael@gmail.com 
