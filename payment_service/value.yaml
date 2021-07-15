@@ -1,0 +1,38 @@
+namespace:
+  name: test 
+ 
+service:
+  port: 80
+  type: ClusterIP
+
+image:
+  repository: cudraphael/customer-service:latest 
+  tag: 1.0.0
+  pullPolicy: IfNotPresent
+
+health:
+  readinessDelay: 30
+  livenessDelay: 180
+  endpoint: /health
+
+replicaCount: 1
+
+resources:
+  requests:
+    cpu: 70m
+    memory: 256Mi
+
+ingress:
+  enabled: true
+  annotations: 
+    kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  path: /
+  hosts:
+    - url: localhost:8080
+      path: /customer
+
+  tls: []
+
+configmap:
+  data: "version: 1.0.0"
