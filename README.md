@@ -1,4 +1,5 @@
-## Hello there, Comrade, this is the repo that governs the Youverify assessment I was given
+## Hello there, Comrade. 
+### This is the repo that governs the Youverify assessment I was given
 
 The repo consists of the different helm charts for the services, and also the supporting application including Redis and the likes
 
