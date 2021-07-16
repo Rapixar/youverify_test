@@ -4,8 +4,8 @@
 The repo consists of the different helm charts for the services, and also the supporting application including Redis and the likes
 
 ### The State Of The Microservices
-I used a single repo to showcase the manner in which I would handle a Nodejs application, I used the nestjs framework if you don't mind. I'm a big fan of Nestjs actually.
-The repository is located at [Awesome Repo](https://github.com/Rapixar/youverify_assessment). It has all the binaries for the application, including a very robust CI/CD declaration. I also added a spice of GitHub Actions to run tests on every Pull Requests. I didn't set the environment variables to on GitHub for my Docker registry connection hence the jobs failed, but it worked at some point where I only built the image without pushing to a registry.
+I used a single repo to showcase the manner in which I would handle a Nodejs application, This can always be replicated for other nodejs projects and if there's a need for Bespoke adjustments, then this would also be adjusted to meet the demands. I used the nestjs framework if you don't mind. I'm a big fan of Nestjs actually.
+The repository is located at [Awesome Repo](https://github.com/Rapixar/youverify_assessment). It has all the binaries for the application, including a very robust CI/CD declaration. I also added a spice of GitHub Actions to run tests on every Pull Requests. I didn't set the environment variables on GitHub for my Docker registry connection hence the jobs failed, but it worked at some point where I only built the image without pushing to a registry.
 In the repo, a sample Jenkinsfile and Dockerfile was inclunded that defines the holistic process for Continous Integration and Continous Delivery. The [Jenkinsfile](https://github.com/Rapixar/youverify_assessment/blob/main/Jenkinsfile) defines the CI and CD process in general, including the automatic building of the artifact and deployment to Kubernetes using a parametrized Jenkins job that syncs with Helm.
 
 ### The Pipeline
